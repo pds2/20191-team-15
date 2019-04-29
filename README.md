@@ -30,3 +30,7 @@
 > Como usuário gostaria de encontrar o menor caminho entre dois vértices em um grafo ponderado e direcionado que contém pesos negativos nas arestas.
 * Receber e armazenar o grafo ponderado e orientado informado pelo usuário
 * Rodar o algoritmo de Bellman-Ford para encontrar o menor caminho entre os dois vértices
+
+>Como usuário eu gostaria de encontrar o caminho da entrada até a saída de um labirinto que foi modelado em um grafo não ponderado e não orientado
+* Receber e armazenar o grafo não ponderado e não orientado informado pelo usuário
+* Rodar o algoritmo da busca em profundidade para encontrar o caminho até a saída
