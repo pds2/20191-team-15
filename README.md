@@ -26,7 +26,7 @@
 * Impressão do grafo
 
 > Grafo com arestas com peso e sem direção
-* Arvore geradora mínima
+* Árvore geradora mínima
 
 >Grafo com arestas com peso positivo e com direção
 * Caminho mais curto de uma origem para todos os vertices
