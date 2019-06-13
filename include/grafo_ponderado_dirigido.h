@@ -7,9 +7,9 @@ class GrafoPonderadoDirigido : public GrafoPonderado{
 public:
     GrafoPonderadoDirigido(int num_vertices);
     void adiciona_aresta(int origem, int destino, int peso) override;
-    GrafoPonderadoDirigido caminho_mais_curto(int origem, int destino);
+ //   GrafoPonderadoDirigido caminho_mais_curto(int origem, int destino);
     virtual int get_num_arestas() override;
-    GrafoPonderadoDirigido menor_caminho(int origem, int destino);
+    std::vector<int> menores_distancias(int origem);
 };
 
 
