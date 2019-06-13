@@ -54,13 +54,23 @@ TEST_CASE("5 - Testando adicao de arestas já existentes"){
 }
 
 TEST_CASE("6 - Testando AGM"){
-    GrafoPonderado grafo(6);
+    GrafoPonderado grafo(4);
     CHECK_NOTHROW(grafo.adiciona_aresta(0,2,1));
     CHECK_NOTHROW(grafo.adiciona_aresta(0,1,5));
-    CHECK_THROWS(grafo.adiciona_aresta(0,1,9));
-    CHECK_THROWS(grafo.adiciona_aresta(2,0,5));
+    CHECK_NOTHROW(grafo.adiciona_aresta(1,2,6));
+    CHECK_NOTHROW(grafo.adiciona_aresta(1,3,2));
+    CHECK_NOTHROW(grafo.adiciona_aresta(0,3,9));
+    CHECK_NOTHROW(grafo.adiciona_aresta(2,3,1));
     GrafoPonderado g2=grafo.arvore_geradora_minima();
-    CHECK(g2.get_num_vertices()==6);
-    CHECK(g2.get_num_arestas()==2);
-    CHECK(g2.get_peso_total()==7);
+    CHECK(g2.get_num_vertices()==4);
+    CHECK(g2.get_num_arestas()==3);
+    CHECK(g2.get_peso_total()==4);
+}
+
+TEST_CASE("7 - Testando agm de grafo nao conexo"){
+    GrafoPonderado grafo(4);
+    CHECK_NOTHROW(grafo.adiciona_aresta(0,1,5));
+    CHECK_NOTHROW(grafo.adiciona_aresta(2,3,6));
+    GrafoPonderado g2=grafo.arvore_geradora_minima();
+    CHECK(g2.get_num_arestas()==0);
 }

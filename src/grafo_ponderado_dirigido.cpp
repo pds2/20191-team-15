@@ -23,3 +23,10 @@ void GrafoPonderadoDirigido::adiciona_aresta(int origem, int destino, int peso){
     }
 }
 
+int GrafoPonderadoDirigido::get_num_arestas(){
+    int i, num_arestas=0;
+    for(i=0;i<this->get_num_vertices();i++){
+        num_arestas+=_vizinhos[i].size();
+    }
+    return num_arestas;
+}

@@ -20,3 +20,7 @@ const char* PesoInvalidoException::what() const noexcept{
 const char* ArestaJaExistenteException::what() const noexcept{
     return "Aresta ja existente!";
 }
+
+const char* GrafoNaoConexoException::what() const noexcept{
+    return "Grafo nao conexo!";
+}

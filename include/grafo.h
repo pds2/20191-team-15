@@ -2,10 +2,8 @@
 #define GRAFO_H
 
 #include <vector>
-#include <list>
 #include "aresta.h"
 #include <iostream>
-
 
 
 
@@ -19,15 +17,14 @@ public:
     int get_num_vertices();
     bool existe_aresta(int v1, int v2);
     void adiciona_aresta(int v1, int v2);
-    int get_num_arestas();
+    virtual int get_num_arestas();
     void imprime_grafo();
-    //bool existe_aresta(int v1, int v2);
+    std::vector<Aresta> get_adjacentes(int indice);
     bool eh_conexo();
-    //void busca_em_profundidade();
     void busca_em_largura();
 
 };
 
-void busca_em_profundidade(Grafo grafo, std::list<int> vertices, int inicio);
+void busca_em_profundidade(Grafo *grafo, std::vector<int> &vertices, int inicio, int contador);
 
 #endif

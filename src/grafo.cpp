@@ -17,8 +17,6 @@ int Grafo::get_num_vertices(){
 
 bool Grafo::existe_aresta(int v1, int v2){
     unsigned int i;
-    //int vertice1=std::min(v1,v2);
-    //int vertice2=std::max(v1,v2);
     for(i=0;i<_vizinhos[v1].size();i++){
         if(_vizinhos[v1][i].get_vertice2()==v2){
             return true;
@@ -28,22 +26,21 @@ bool Grafo::existe_aresta(int v1, int v2){
 }
 
 void Grafo::adiciona_aresta(int v1, int v2){
-    int vertice1=std::min(v1,v2);
-    int vertice2=std::max(v1,v2);
     //Aresta inválida
     if(v1<0|| v1>=this->get_num_vertices() || v2<0 || v2>=this->get_num_vertices()){
         throw VerticesInvalidosException();
     }
     //Aresta já existe
-    else if(this->existe_aresta(vertice1,vertice2)){
+    else if(this->existe_aresta(v1,v2)){
         throw ArestaJaExistenteException();
     }
     //Add aresta
     else{
-        Aresta aresta(vertice1,vertice2,0);
-        //Aresta aresta_volta(v2,v1,0);
-        _vizinhos[vertice1].push_back(aresta);
-        //_vizinhos[v2].push_back(aresta_volta);
+        Aresta aresta(v1,v2,0);
+        _vizinhos[v1].push_back(aresta);
+        Aresta aresta2(v2,v1,0);
+        _vizinhos[v2].push_back(aresta2);
+
     }
 }
 
@@ -52,31 +49,50 @@ int Grafo::get_num_arestas(){
     for(i=0;i<this->get_num_vertices();i++){
         num_arestas+=_vizinhos[i].size();
     }
-    return num_arestas;
+    return num_arestas/2;
 }
 
 void Grafo::imprime_grafo(){
-    int i,contador=0;
+    int i;
     unsigned int j;
-    for(i=0;i<this->get_num_vertices();i++){
-        for(j=0;j<_vizinhos[i].size();j++){
-            contador++;
-            std::cout<<"("<<i<<", "<<_vizinhos[i][j].get_vertice2()<<")"<<std::endl;
+    if(this->get_num_arestas()!=0){
+        for(i=0;i<this->get_num_vertices();i++){
+            for(j=0;j<_vizinhos[i].size();j++){
+                std::cout<<"("<<i<<", "<<_vizinhos[i][j].get_vertice2()<<")"<<std::endl;
+            }
         }
     }
-    if(contador==0){
-        std::cout<<"Grafo sem arestas adicionadas"<<std::endl;
+    else{
+        std::cout<<"Grafo sem arestas adicionadas!"<<std::endl;
     }
 }
-
-
 
 
 bool Grafo::eh_conexo(){
-
-return false;
+    int contador=1;
+    unsigned int i;
+    std::vector<int> vertices(this->get_num_vertices(),0);
+    busca_em_profundidade(this,vertices,0,contador);
+    for(i=0;i<vertices.size();i++){
+        if(vertices[i]==0){
+            return false;
+        }
+    }
+    return true;
 }
 
-void busca_em_profundidade(Grafo grafo, std::list<int> vertices, int inicio){
+std::vector<Aresta> Grafo::get_adjacentes(int indice){
+    return _vizinhos[indice];
+}
 
+void busca_em_profundidade(Grafo *grafo, std::vector<int> &vertices, int inicio, int contador){
+    unsigned int i;
+    int proximo;
+    vertices[inicio]=contador;
+    for(i=0;i<grafo->get_adjacentes(inicio).size();i++){
+        proximo=grafo->get_adjacentes(inicio)[i].get_vertice2();
+        if(vertices[proximo]==0){
+            busca_em_profundidade(grafo,vertices,proximo,contador+1);
+        }
+    }
 }

@@ -1,7 +1,7 @@
 #ifndef GRAFO_PONDERADO_H
 #define GRAFO_PONDERADO_H
 
-
+#include <algorithm>
 #include "grafo.h"
 
 class GrafoPonderado : public Grafo{

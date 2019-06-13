@@ -28,4 +28,9 @@ public:
     virtual const char* what() const noexcept override;
 };
 
+class GrafoNaoConexoException : public std::exception {
+public:
+    virtual const char* what() const noexcept override;
+};
+
 #endif

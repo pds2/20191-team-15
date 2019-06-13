@@ -27,3 +27,7 @@ int Aresta::get_vertice2(){
 void Aresta::modifica_peso(int peso){
     _peso=peso;
 }
+
+bool compara_arestas(Aresta a1, Aresta a2){
+    return (a1.get_peso()<a2.get_peso());
+}

@@ -2,6 +2,7 @@
 #define ARESTA_H
 #include "excecoes.h"
 
+
 class Aresta{
 private:
     int _vertice1;
@@ -14,5 +15,7 @@ public:
     int get_vertice2();
     void modifica_peso(int peso);
 };
+
+bool compara_arestas(Aresta a1, Aresta a2);
 
 #endif
