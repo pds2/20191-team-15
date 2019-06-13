@@ -12,7 +12,7 @@ public:
     virtual void adiciona_aresta(int v1, int v2, int peso);
     int get_peso_total();
     GrafoPonderado arvore_geradora_minima();
-
+    virtual void imprime_grafo() override;
 
 };
 

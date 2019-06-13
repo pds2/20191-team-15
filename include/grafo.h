@@ -18,7 +18,7 @@ public:
     bool existe_aresta(int v1, int v2);
     void adiciona_aresta(int v1, int v2);
     virtual int get_num_arestas();
-    void imprime_grafo();
+    virtual void imprime_grafo();
     std::vector<Aresta> get_adjacentes(int indice);
     bool eh_conexo();
     void busca_em_largura();

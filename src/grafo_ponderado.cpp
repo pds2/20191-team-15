@@ -39,12 +39,10 @@ GrafoPonderado GrafoPonderado::arvore_geradora_minima(){
             vetor_arestas.push_back(_vizinhos[i][j]);
         }
     }
-
-    if(!this->eh_conexo()){
-        std::cout<<"Grafo nao conexo!"<<std::endl;
-    }
-    else{
+    //Se o grafo não for conexo ele não possui agm.
+    if(this->eh_conexo()){
         int v1,v2,peso;
+        //inicializa a construção da agm pelo vertice 0.
         std::sort(vetor_arestas.begin(),vetor_arestas.end(),compara_arestas);
         v1=vetor_arestas[0].get_vertice1();
         v2=vetor_arestas[0].get_vertice2();
@@ -52,6 +50,7 @@ GrafoPonderado GrafoPonderado::arvore_geradora_minima(){
         agm.adiciona_aresta(v1,v2,peso);
         vertices_adicionados[v1]=1;
         vertices_adicionados[v2]=1;
+        //A cada iteração adiciona a aresta com menor peso que liga um vertice na agm a um vertice fora da agm.
         for(int k=0;k<this->get_num_vertices()-1;k++){
             for(unsigned int l=0;l<vetor_arestas.size();l++){
                 v1=vetor_arestas[l].get_vertice1();
@@ -71,4 +70,19 @@ GrafoPonderado GrafoPonderado::arvore_geradora_minima(){
         }
     }
     return agm;
+}
+
+void GrafoPonderado::imprime_grafo(){
+    int i;
+    unsigned int j;
+    if(this->get_num_arestas()!=0){
+        for(i=0;i<this->get_num_vertices();i++){
+            for(j=0;j<_vizinhos[i].size();j++){
+                std::cout<<"("<<i<<", "<<_vizinhos[i][j].get_vertice2()<<", "<<_vizinhos[i][j].get_peso()<<")"<<std::endl;
+            }
+        }
+    }
+    else{
+        std::cout<<"Grafo sem arestas adicionadas!"<<std::endl;
+    }
 }

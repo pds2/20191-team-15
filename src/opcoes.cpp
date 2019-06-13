@@ -26,7 +26,16 @@ void opcao_grafo(){
                 std::cin>>v1;
                 std::cout<<"Vertice 2: ";
                 std::cin>>v2;
-                grafo.adiciona_aresta(v1,v2);
+                //grafo.adiciona_aresta(v1,v2);
+                try{
+                    grafo.adiciona_aresta(v1,v2);
+                }
+                catch(VerticesInvalidosException &e){
+                    std::cout<<e.what();
+                }
+                catch(ArestaJaExistenteException &e){
+                    std::cout<<e.what();
+                }
             }
             goto inicio;
         case 2:
@@ -74,7 +83,21 @@ void opcao_grafo_ponderado(){
                 std::cin>>v2;
                 std::cout<<"Peso: ";
                 std::cin>>peso;
-                grafo.adiciona_aresta(v1,v2,peso);
+                //grafo.adiciona_aresta(v1,v2,peso);
+                try{
+                    grafo.adiciona_aresta(v1,v2,peso);
+                }
+                catch(VerticesInvalidosException &e){
+                    std::cout<<e.what();
+                    //break;
+                }
+                catch(ArestaJaExistenteException &e){
+                    std::cout<<e.what();
+                   // break;
+                }
+                catch(PesoInvalidoException &e){
+                    std::cout<<e.what();
+                }
             }
             goto inicio;
         case 2:
@@ -125,7 +148,19 @@ void opcao_grafo_ponderado_dirigido(){
                 std::cin>>v2;
                 std::cout<<"Peso: ";
                 std::cin>>peso;
-                grafo.adiciona_aresta(v1,v2,peso);
+                //grafo.adiciona_aresta(v1,v2,peso);
+                try{
+                    grafo.adiciona_aresta(v1,v2,peso);
+                }
+                catch(VerticesInvalidosException &e){
+                    std::cout<<e.what();
+                }
+                catch(ArestaJaExistenteException &e){
+                    std::cout<<e.what();
+                }
+                catch(PesoInvalidoException &e){
+                    std::cout<<e.what();
+                }
             }
             goto inicio;
         case 2:
