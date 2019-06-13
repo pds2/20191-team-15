@@ -20,7 +20,8 @@
 * make tests
 
 ## Em construção
->> Tratamento de caminhos mais curtos em grafos com pesos negativos em arestas com o algoritmo de Bellman-Ford.
+> Implementação de grafos com pesos negativos nas arestas.
+> Tratamento de caminhos mais curtos em grafos com pesos negativos nas arestas com o algoritmo de Bellman-Ford.
 
 ## User Stories
 > Como usuário gostaria de otimizar o uso de cabeamento em uma rede que modelei como um grafo não orientado e ponderado.
