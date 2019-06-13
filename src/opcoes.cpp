@@ -6,7 +6,7 @@ void opcao_grafo(){
     std::cin>>num_vertices;
     Grafo grafo(num_vertices);
     inicio:
-    std::cout<<std::endl<<"//////////////////////////////////////////////////////////////////"<<std::endl<<std::endl;
+    std::cout<<std::endl<<std::endl<<std::endl;
     std::cout<<"O que voce deseja fazer?"<<std::endl;
     std::cout<<"Adicionar arestas ao grafo - 1"<<std::endl;
     std::cout<<"Imprimir o grafo - 2"<<std::endl;
@@ -15,7 +15,7 @@ void opcao_grafo(){
 
     std::cin>>opcao;
 
-    std::cout<<std::endl<<"//////////////////////////////////////////////////////////////////"<<std::endl<<std::endl;
+    std::cout<<std::endl<<std::endl<<std::endl;
     switch(opcao){
         case 1:
             std::cout<<"Quantas arestas deseja adicionar?"<<std::endl;
@@ -62,7 +62,7 @@ void opcao_grafo_ponderado(){
     GrafoPonderado grafo(num_vertices);
     inicio:
     GrafoPonderado agm=grafo.arvore_geradora_minima();
-    std::cout<<std::endl<<"//////////////////////////////////////////////////////////////////"<<std::endl<<std::endl;
+    std::cout<<std::endl<<std::endl<<std::endl;
     std::cout<<"O que voce deseja fazer?"<<std::endl;
     std::cout<<"Adicionar arestas ao grafo - 1"<<std::endl;
     std::cout<<"Imprimir o grafo - 2"<<std::endl;
@@ -70,7 +70,7 @@ void opcao_grafo_ponderado(){
     std::cout<<"Imprimir a arvore geradora minima do grafo - 4"<<std::endl;
     std::cout<<"Digite qualquer outro numero para encerrar o programa"<<std::endl;
     std::cin>>opcao;
-    std::cout<<std::endl<<"//////////////////////////////////////////////////////////////////"<<std::endl<<std::endl;
+    std::cout<<std::endl<<std::endl<<std::endl;
     switch(opcao){
         case 1:
             std::cout<<"Quantas arestas deseja adicionar?"<<std::endl;
@@ -127,7 +127,7 @@ void opcao_grafo_ponderado_dirigido(){
     GrafoPonderadoDirigido grafo(num_vertices);
     std::vector<int> menores_distancias;
     inicio:
-    std::cout<<std::endl<<"//////////////////////////////////////////////////////////////////"<<std::endl<<std::endl;
+    std::cout<<std::endl<<std::endl<<std::endl;
     std::cout<<"O que voce deseja fazer?"<<std::endl;
     std::cout<<"Adicionar arestas ao grafo - 1"<<std::endl;
     std::cout<<"Imprimir o grafo - 2"<<std::endl;
@@ -135,7 +135,7 @@ void opcao_grafo_ponderado_dirigido(){
     std::cout<<"Verificar as menores distancias a partir de um vertice - 4"<<std::endl;
     std::cout<<"Digite qualquer outro numero para encerrar o programa"<<std::endl;
     std::cin>>opcao;
-    std::cout<<std::endl<<"//////////////////////////////////////////////////////////////////"<<std::endl<<std::endl;
+    std::cout<<std::endl<<std::endl<<std::endl;
     switch(opcao){
         case 1:
             std::cout<<"Quantas arestas deseja adicionar?"<<std::endl;
@@ -179,7 +179,7 @@ void opcao_grafo_ponderado_dirigido(){
             std::cout<<"Origem: ";
             std::cin>>origem;
             menores_distancias=grafo.menores_distancias(origem);
-            std::cout<<std::endl<<"//////////////////////////////////////////////////////////////////"<<std::endl<<std::endl;
+            std::cout<<std::endl<<std::endl<<std::endl;
             for(unsigned int j=0;j<menores_distancias.size();j++){
                 if(menores_distancias[j]!=-1){
                     std::cout<<"A distancia de "<<origem<<" ate "<<j<<" tem peso total "<<menores_distancias[j]<<std::endl;

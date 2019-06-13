@@ -9,12 +9,12 @@
 int main() {
 
     int opcao,opcao2;
-    std::cout<<"//////////////////////////////////////////////////////////////////"<<std::endl<<std::endl;
+    std::cout<<std::endl<<std::endl;
     std::cout<<"Digite a opcao de acordo com o time de grafo que voce deseja trabalhar: "<<std::endl;
     std::cout<<"Grafo nao ponderado - 1"<<std::endl;
     std::cout<<"Grafo ponderado - 2"<<std::endl;
     std::cout<<"Digite qualquer outro numero para encerrar o programa"<<std::endl;
-    std::cout<<"//////////////////////////////////////////////////////////////////"<<std::endl<<std::endl;
+    std::cout<<std::endl<<std::endl;
     std::cin >> opcao;
     if(opcao==1){
         opcao_grafo();
