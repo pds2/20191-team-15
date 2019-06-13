@@ -19,6 +19,18 @@
 > Compilar e rodar os testes:
 * make tests
 
+## Já implementado
+> Grafo com arestas sem pesos e direção
+* Adição de arestas
+* Verificação se o grafo é conexo.
+* Impressão do grafo
+
+> Grafo com arestas com peso e sem direção
+* Arvore geradora mínima
+
+>Grafo com arestas com peso positivo e com direção
+* Caminho mais curto de uma origem para todos os vertices
+
 ## Em construção
 > Implementação de grafos com pesos negativos nas arestas.
 > Tratamento de caminhos mais curtos em grafos com pesos negativos nas arestas com o algoritmo de Bellman-Ford.
