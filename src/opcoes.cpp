@@ -161,5 +161,5 @@ void opcao_grafo_ponderado_dirigido(){
     }
 }
 void opcao_grafo_ponderado_negativo_dirigido(){
-
+    std::cout<<"Opcao em desenvolvimento..."<<std::endl;
 }
