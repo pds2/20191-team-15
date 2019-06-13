@@ -8,6 +8,19 @@
 *	Caminhos mais curtos (Djikstra, Bellman-Ford e Johnson)
 *	Árvore Geradora Mínima (Prim e Kruskal)
 
+## Instruções de uso
+> Programa desenvolvido e Testes executados em ambiente linux.
+
+> Compilar o programa:
+* make
+
+> Compilar e rodar o programa:
+* make run
+
+> Compilar e rodar os testes:
+* make tests
+
+
 ## User Stories
 > Como usuário gostaria de otimizar o uso de cabeamento em uma rede que modelei como um grafo não orientado e ponderado.
 * Receber e armazenar o grafo ponderado e não orientado informado pelo usuário
